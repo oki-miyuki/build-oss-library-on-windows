@@ -43,16 +43,16 @@ jmorecfg.h を修正する
 ```  
 
 ビルドを実行する  
-```C:\Downloads\jpeg-xx> nmake -f makefile.vc nodebug=1
+```C:\Downloads\jpeg-xx> nmake -f makefile.vc nodebug=1```  
 
 jpeg-xx 直下にビルドしたファイルが生成される
 
-\*.h は $(OSS_LIB_DIR)\include\jpeg へコピー
+\*.h は $(OSS_LIB_DIR)\include\jpeg へコピー  
 ```C:\Downloads\jpeg-xx> xcopy /s /e *.h %OSS_LIB_DIR%\include\jpeg\```  
 
-\*.lib は $(OSS_LIB_DIR)\lib へコピー
+\*.lib は $(OSS_LIB_DIR)\lib へコピー  
 ```C:\Downloads\jpeg-xx> xcopy /s /e *.lib %OSS_LIB_DIR%\lib\```  
 
-\*.dll は $(OSS_LIB_DIR)\bin へコピー
+\*.dll は $(OSS_LIB_DIR)\bin へコピー  
 ```C:\Downloads\jpeg-xx> xcopy /s /e *.dll %OSS_LIB_DIR%\bin\```
 
