@@ -10,5 +10,6 @@ C:¥Downloads¥libexpat-master¥expat> mkdir build
 C:¥Downloads¥libexpat-master¥expat> cd build
 C:¥Downloads¥libexpat-master¥expat¥build> cmake .. -G”NMake Makefiles” -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=%OSS_LIB_DIR%libexpat
 C:¥Downloads¥libexpat-master¥expat¥build> nmake
+C:¥Downloads¥libexpat-master¥expat¥build> nmake test
 C:¥Downloads¥libexpat-master¥expat¥build> nmake install
 ```
