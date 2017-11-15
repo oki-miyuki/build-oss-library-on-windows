@@ -26,6 +26,7 @@ OSS_LIB_DIR=c:¥Libs
  - /script/build.bat を編集し、OSS_LIB_SOURCE, OSS_LIB_DIR を書き換える
  - Visual Studio コマンド プロンプトを開く
  - /script/build.bat を実行する
+ - /script/mkl.bat を管理権限で実行する(シンボリックリンクの作成)
 
 ## OSS_LIB_DIR の構成
 /bin  
