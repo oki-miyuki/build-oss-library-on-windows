@@ -20,6 +20,13 @@ OSS_LIB_DIR=c:¥Libs
   ライブラリをビルドするバッチファイル  
   build.bat  
   
+## ビルド方法
+
+ - ライブラリのソースを OSS_LIB_SOURCE ディレクトリに展開する。
+ - /script/build.bat を編集し、OSS_LIB_SOURCE, OSS_LIB_DIR を書き換える
+ - Visual Studio コマンド プロンプトを開く
+ - /script/build.bat を実行する
+
 ## OSS_LIB_DIR の構成
 /bin  
   \*.dll を置く  
