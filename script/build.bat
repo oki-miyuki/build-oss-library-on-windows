@@ -4,5 +4,10 @@ set OSS_LIB_DIR=D:\Libs
 mkdir %OSS_LIB_DIR%\include
 mkdir %OSS_LIB_DIR%\lib
 mkdir %OSS_LIB_DIR%\bin
+mkdir %OSS_LIB_DIR%\data
 
-for %%s in (zlib curl freetype jpeg libpng libexpat libkml) do call %%s\build.bat
+rem zlib <= libpng, tiff
+rem jpeg <= tiff
+rem tiff <= libgeotiff
+
+for %%s in (zlib curl proj freetype jpeg libpng tiff tbb libexpat libkml) do call %%s\build.bat
