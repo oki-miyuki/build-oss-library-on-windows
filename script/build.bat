@@ -10,4 +10,8 @@ rem zlib <= libpng, tiff
 rem jpeg <= tiff
 rem tiff <= libgeotiff
 
+pushd %~dp0
+
 for %%s in (zlib curl proj freetype jpeg libpng tiff tbb libexpat libkml) do call %%s\build.bat
+
+popd

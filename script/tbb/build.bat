@@ -2,6 +2,8 @@ rem ---------------
 rem BUILD TBB
 rem ---------------
 
+pushd %~dp0
+
 call ..\inspect_vc.bat
 
 for /d %%d in (%OSS_LIB_SOURCE%\tbb-*) do @set TBB_DIR=%%d
@@ -19,3 +21,4 @@ set TBB_DIR=
 
 popd
 
+popd
