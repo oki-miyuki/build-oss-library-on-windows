@@ -21,4 +21,11 @@ set TBB_DIR=
 
 popd
 
+rem -------------
+rem gathering
+rem -------------
+call ..\mkl_inc.bat tbb
+call ..\mkl_lib.bat tbb
+
 popd
+

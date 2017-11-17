@@ -2,6 +2,8 @@ rem ---------------
 rem BUILD LIBEXPAT
 rem ---------------
 
+pushd %~dp0
+
 for /d %%d in (%OSS_LIB_SOURCE%\libexpat*) do @set LIBEXPAT_DIR=%%d
 
 pushd %LIBEXPAT_DIR%
@@ -18,3 +20,10 @@ set LIBEXPAT_DIR=
 
 popd
 
+rem -------------
+rem gathering
+rem -------------
+call ..\mkl_inc.bat libexpat
+call ..\mkl_lib.bat libexpat
+
+popd

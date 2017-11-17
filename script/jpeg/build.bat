@@ -2,6 +2,8 @@ rem ---------------
 rem BUILD JPEG
 rem ---------------
 
+pushd %~dp0
+
 for /d %%d in (%OSS_LIB_SOURCE%\jpeg*) do @set JPEG_DIR=%%d
 
 pushd %JPEG_DIR%
@@ -17,3 +19,11 @@ set JPEG_DIR=
 
 popd
 
+
+rem -------------
+rem gathering
+rem -------------
+call ..\mkl_inc.bat jpeg
+call ..\mkl_lib.bat jpeg
+
+popd

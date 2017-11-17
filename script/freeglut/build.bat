@@ -1,6 +1,7 @@
 rem ---------------
-rem BUILD CURL
+rem BUILD FreeGLUT
 rem ---------------
+pushd %~dp0
 
 for /d %%d in (%OSS_LIB_SOURCE%\freeglut*) do @set GLUT_DIR=%%d
 
@@ -18,3 +19,10 @@ set GLUT_DIR=
 
 popd
 
+rem -------------
+rem gathering
+rem -------------
+call ..\mkl_inc.bat freeglut
+call ..\mkl_lib.bat freeglut
+
+popd

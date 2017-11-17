@@ -12,6 +12,9 @@ rem tiff <= libgeotiff
 
 pushd %~dp0
 
-for %%s in (zlib curl proj freetype jpeg libpng tiff tbb libexpat libkml) do call %%s\build.bat
-
+for %%s in (zlib openssl curl proj freetype freeglut jpeg libpng tiff tbb libexpat libkml libgeotiff) do (
+ call %%s\build.bat
+ rem echo *** done %%s ***
+ rem pause
+)
 popd

@@ -1,6 +1,7 @@
 rem ---------------
 rem BUILD CURL
 rem ---------------
+pushd %~d0
 
 for /d %%d in (%OSS_LIB_SOURCE%\curl*) do @set CURL_DIR=%%d
 
@@ -13,8 +14,14 @@ cmake .. -G"NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=%
 nmake
 nmake install
 
-
 set CURL_DIR=
 
 popd
 
+rem -------------
+rem gathering
+rem -------------
+call ..\mkl_inc.bat curl
+call ..\mkl_lib.bat curl
+
+popd
