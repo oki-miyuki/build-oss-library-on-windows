@@ -20,8 +20,14 @@ OSS_LIB_DIR=c:¥Libs
   ライブラリをビルドするバッチファイル  
   build.bat  
   
+## 必要項目
+ - [Perl](https://www.activestate.com/activeperl)
+ - [nasm](http://www.nasm.us/)
+ - [Tcl](https://www.activestate.com/activetcl)
+ - Visual C++
+ 
 ## ビルド方法
-
+ - ビルドには perl, nasm, tcl が必要です。ビルドする環境では、これらのexeが実行できる必要があります。
  - ライブラリのソースを OSS_LIB_SOURCE ディレクトリに展開する。
  - /script/build.bat を編集し、OSS_LIB_SOURCE, OSS_LIB_DIR を書き換える
  - Visual Studio コマンド プロンプトを開く
