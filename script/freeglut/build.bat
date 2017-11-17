@@ -5,6 +5,11 @@ pushd %~dp0
 
 for /d %%d in (%OSS_LIB_SOURCE%\freeglut*) do @set GLUT_DIR=%%d
 
+if "%GLUT_DIR%"=="" (
+  echo FreeGLUT is not found. skip...
+  goto end
+)
+
 pushd %GLUT_DIR%
 
 rem del /S /Q build
@@ -24,5 +29,7 @@ rem gathering
 rem -------------
 call ..\mkl_inc.bat freeglut
 call ..\mkl_lib.bat freeglut
+
+:end
 
 popd

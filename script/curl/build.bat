@@ -5,6 +5,11 @@ pushd %~d0
 
 for /d %%d in (%OSS_LIB_SOURCE%\curl*) do @set CURL_DIR=%%d
 
+if "%CURL_DIR%"=="" (
+  echo CURL is not found. skip...
+  goto end
+)
+
 pushd %CURL_DIR%
 
 rem del /S /Q build
@@ -23,5 +28,7 @@ rem gathering
 rem -------------
 call ..\mkl_inc.bat curl
 call ..\mkl_lib.bat curl
+
+:end
 
 popd
