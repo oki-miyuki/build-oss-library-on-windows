@@ -9,8 +9,8 @@ call ..\inspect_vc.bat
 for /d %%d in (%OSS_LIB_SOURCE%\opencv-*) do @set OPENCV_DIR=%%d
 
 if "%OPENCV_DIR%"=="" (
-  echo OpenCV not found. skip...
-  exit 0
+  echo OpenCV is not found. skip...
+  goto end
 )
 
 pushd %OPENCV_DIR%
@@ -31,6 +31,8 @@ rem gathering
 rem -------------
 call ..\mkl_inc.bat opencv
 call ..\mkl_lib.bat opencv\%MACHINE_TARGET%\vc%VCVER%
+
+:end
 
 popd
 

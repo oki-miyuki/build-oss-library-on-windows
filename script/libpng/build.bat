@@ -3,18 +3,26 @@ rem BUILD LIBPNG
 rem ----------------
 rem  DEPENDS ZLIB
 rem ---------------
-if not exist %OSS_LIB_DIR%\Zlib (
-  echo "You have to build zlib first"
-  exit
-)
 
 pushd %~dp0
 
 for /d %%d in (%OSS_LIB_SOURCE%\libpng*) do @set LIBPNG_DIR=%%d
 
-pushd %LIBPNG_DIR%
+if "%LIBPNG_DIR%"=="" (
+  echo LibPNG is not found. skip...
+  goto end
+)
 
 set ZLIB_LIBRARY=%OSS_LIB_DIR%\lib\zlib.lib
+
+
+if not exist %ZLIB_LIBRARY% (
+  echo "LibPNG: zlib is needed skip..."
+  goto end
+)
+
+
+pushd %LIBPNG_DIR%
 
 
 rem del /S /Q build
@@ -33,6 +41,8 @@ rem gathering
 rem -------------
 call ..\mkl_inc.bat libpng
 call ..\mkl_lib.bat libpng
+
+:end
 
 popd
 

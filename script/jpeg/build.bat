@@ -6,6 +6,11 @@ pushd %~dp0
 
 for /d %%d in (%OSS_LIB_SOURCE%\jpeg*) do @set JPEG_DIR=%%d
 
+if "%JPEG_DIR%"=="" (
+  echo jpeg is not found. skip...
+  goto end
+)
+
 pushd %JPEG_DIR%
 
 if not exist jconfig.h  nmake -f makefile.vc setup-v10
@@ -25,5 +30,7 @@ rem gathering
 rem -------------
 call ..\mkl_inc.bat jpeg
 call ..\mkl_lib.bat jpeg
+
+:end
 
 popd

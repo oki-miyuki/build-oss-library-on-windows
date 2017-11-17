@@ -7,14 +7,20 @@ pushd %~dp0
 for /d %%d in (%OSS_LIB_SOURCE%\tiff-*) do @set TIFF_DIR=%%d
 
 if "%TIFF_DIR%"=="" (
-  echo TIFF not found. skip...
-  exit 0
+  echo TIFF is not found. skip...
+  goto end
 )
 
-pushd %TIFF_DIR%
-
 set ZLIB_LIBRARY=%OSS_LIB_DIR%\lib\zlib.lib
-set JPEG_LIB_LIBRARY=%OSS_LIB_DIR%\lib\jpeg.lib
+set JPEG_LIBRARY=%OSS_LIB_DIR%\lib\jpeg.lib
+
+if not exist %ZLIB_LIBRARY% or not exist %JPEG_LIBRARY% (
+  echo "Tiff: zlib or jpeg is needed skip..."
+  goto end
+)
+
+
+pushd %TIFF_DIR%
 
 rem nmake -f makefile.vc
 rem del /S /Q buildtiff
@@ -34,6 +40,8 @@ rem gathering
 rem -------------
 call ..\mkl_inc.bat tiff
 call ..\mkl_lib.bat tiff
+
+:end
 
 popd
 

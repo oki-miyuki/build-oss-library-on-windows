@@ -6,6 +6,11 @@ pushd %~dp0
 
 for /d %%d in (%OSS_LIB_SOURCE%\freetype*) do @set FREETYPE_DIR=%%d
 
+if "%FREETYPE_DIR%"=="" (
+  echo Freetype is not found. skip...
+  goto end
+)
+
 pushd %FREETYPE_DIR%
 
 rem del /S /Q build
@@ -23,6 +28,8 @@ rem gathering
 rem -------------
 call ..\mkl_inc.bat freetype
 call ..\mkl_lib.bat freetype
+
+:end
 
 popd
 

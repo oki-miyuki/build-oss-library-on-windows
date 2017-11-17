@@ -5,6 +5,12 @@ pushd %~dp0
 
 for /d %%d in (%OSS_LIB_SOURCE%\libkml*) do @set LIBKML_DIR=%%d
 
+if "%LIBKML_DIR%"=="" (
+  echo LibKML is not found. skip...
+  goto end
+)
+
+
 pushd %LIBKML_DIR%
 
 msbuild /p:Configuration=Release msvc\libkml.sln
@@ -21,6 +27,8 @@ rem gathering
 rem -------------
 call ..\mkl_inc.bat libkml
 call ..\mkl_lib.bat libkml
+
+:end
 
 popd
 

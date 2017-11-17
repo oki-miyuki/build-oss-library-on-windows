@@ -9,8 +9,8 @@ call ..\inspect_vc.bat
 for /d %%d in (%OSS_LIB_SOURCE%\openjpeg-*) do @set OPENJPEG_DIR=%%d
 
 if "%OPENJPEG_DIR%"=="" (
-  echo OpenJpeg not found. skip...
-  exit 0
+  echo OpenJpeg is not found. skip...
+  goto end
 )
 
 pushd %OPENJPEG_DIR%
@@ -31,6 +31,8 @@ rem gathering
 rem -------------
 call ..\mkl_inc.bat openjpeg
 call ..\mkl_lib.bat openjpeg
+
+:end
 
 popd
 

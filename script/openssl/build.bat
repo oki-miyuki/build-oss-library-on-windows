@@ -8,6 +8,12 @@ call ..\inspect_vc.bat
 
 for /d %%d in (%OSS_LIB_SOURCE%\openssl-*) do @set OPENSSL_DIR=%%d
 
+
+if "%OPENSSL_DIR%"=="" (
+  echo OpenSSL is not found. skip...
+  goto end
+)
+
 pushd %OPENSSL_DIR%
 
 if "%MACHINE_TARGET%"=="x86" (
@@ -32,5 +38,7 @@ rem gathering
 rem -------------
 call ..\mkl_inc.bat openssl
 call ..\mkl_lib.bat openssl
+
+:end
 
 popd

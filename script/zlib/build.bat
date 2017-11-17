@@ -6,6 +6,11 @@ pushd %~dp0
 
 for /d %%d in (%OSS_LIB_SOURCE%\zlib*) do @set ZLIB_DIR=%%d
 
+if "%ZLIB_DIR%"=="" (
+  echo ZLIB is not found. skip...
+  goto end
+)
+
 pushd %ZLIB_DIR%
 
 rem del /S /Q build
@@ -25,6 +30,8 @@ rem gathering
 rem -------------
 call ..\mkl_inc.bat zlib
 call ..\mkl_lib.bat zlib
+
+:end
 
 popd
 
