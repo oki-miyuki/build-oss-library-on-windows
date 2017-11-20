@@ -33,12 +33,12 @@ FINDSTR /R /C:"Version 13." clres.txt >NUL 2>&1 && (
   set VCTOOL=v120
 ) || FINDSTR /R /C:"Version 19." clres.txt >NUL 2>&1 && (
   echo vs2015
-  set VCVER=13
-  set VCTOOL=v130
+  set VCVER=14
+  set VCTOOL=v1４0
 ) || FINDSTR /R /C:"Version 20." clres.txt >NUL 2>&1 && (
   echo vs2017
-  set VCVER=14
-  set VCTOOL=v140
+  set VCVER=15
+  set VCTOOL=v141
 ) || (
   echo unkonwn version
   set VCVER=
