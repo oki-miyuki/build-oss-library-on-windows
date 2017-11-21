@@ -15,7 +15,7 @@ pushd %CURL_DIR%
 rem del /S /Q build
 mkdir build
 cd build
-cmake .. -G"NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=%OSS_LIB_DIR%\curl
+cmake .. -G"NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=%OSS_LIB_DIR%\curl -DCMAKE_USE_WINSSL=ON
 nmake
 nmake install
 
