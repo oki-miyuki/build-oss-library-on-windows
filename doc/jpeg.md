@@ -3,6 +3,19 @@
 コマンドを実行する  
 ```C:\Downloads\jpeg-xx> nmake -f makefile.vc setup-v10```  
 これで jpeg.sIn, apps.sIn が生成される。  
+
+## static LIB
+```C:\Downloads\jpeg-xx> nmake -f makefile.vc nodebug=1```  
+
+jpeg-xx 直下にビルドしたファイルが生成される
+
+\*.h は $(OSS_LIB_DIR)\include\jpeg へコピー  
+```C:\Downloads\jpeg-xx> xcopy /s /e *.h %OSS_LIB_DIR%\include\jpeg\```  
+
+\*.lib は $(OSS_LIB_DIR)\lib へコピー  
+```C:\Downloads\jpeg-xx> xcopy /s /e *.lib %OSS_LIB_DIR%\lib\```  
+
+## DLL
 static ライブラリの生成を dll用に書き換える  
 
 makefile.vc を修正する
