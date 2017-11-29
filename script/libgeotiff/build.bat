@@ -1,3 +1,4 @@
+@echo off
 rem ---------------
 rem BUILD LibGeoTiff
 rem ---------------
@@ -21,8 +22,12 @@ set PROJ_LIBRARY=%OSS_LIB_DIR%\lib\proj.lib
 set TIFF_LIBRARY=%OSS_LIB_DIR%\lib\tiff.lib
 
 
-if not exist %PROJ_LIBRARY% OR not exist %TIFF_LIBRARY% (
-  echo LibGeoTIFF: Proj or Tiff needed skip...
+if not exist %PROJ_LIBRARY% (
+  echo LibGeoTIFF: Proj needed skip...
+  goto end
+)
+if not exist %TIFF_LIBRARY% (
+  echo LibGeoTIFF: Tiff needed skip...
   goto end
 )
 
