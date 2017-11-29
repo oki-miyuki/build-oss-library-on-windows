@@ -1,51 +1,54 @@
 # build-oss-library-on-windows
-## コンセプト
-C,C++系のオープンソース・ライブラリをウィンドウズ環境下のVisual Studio でコンパイルする手順をまとめる。
-## 共通環境
-環境変数を設定し、これに則ってライブラリを構築する  
-オープンソース・ライブラリを展開するディレクトリ  
+## Concept
+
+Summarize procedures for compiling C / C ++ based open source libraries with Visual Studio under Windows environment.
+## Common Environment
+Set the following environment variables and build a library accordingly 
+
+Directory to extract open source libraries archives 
 OSS_LIB_SOURCE=c:¥Downloads  
-オープンソース・ライブラリをコンパイルし、バイナリをインストールするディレクトリ  
+Directory for build results.
 OSS_LIB_DIR=c:¥Libs  
 
-## このプロジェクトのディレクトリ構成
+## Directory structure of this project
 /doc  
- ビルド方法を記述したドキュメントを、ライブラリ名.md 形式で管理する  
+ Manage the document describing the build method in [the library name].md format 
  
 /script  
- 全てのライブラリをビルドするバッチファイル  
+ (Build all libraries batch file.) 
  build.bat  
  
-/script/ライブラリ名  
-  ライブラリをビルドするバッチファイル  
+/script/[the library name]  
+  (Build the library batch file.) 
   build.bat  
   
-## 必要項目
+## Required
  - [Perl](https://www.activestate.com/activeperl)
  - [nasm](http://www.nasm.us/)
  - [Tcl](https://www.activestate.com/activetcl)
  - Visual C++
  
-## ビルド方法
- - ビルドには perl, nasm, tcl が必要です。ビルドする環境では、これらのexeが実行できる必要があります。
- - ライブラリのソースを OSS_LIB_SOURCE ディレクトリに展開する。
- - /script/build.bat を編集し、OSS_LIB_SOURCE, OSS_LIB_DIR を書き換える
- - Visual Studio コマンド プロンプトを開く
- - /script/build.bat を実行する
+## How to build
+ 
+ - Perl, nasm, tcl is required for building. In the build environment, you need to be able to execute these exes.
+ - Extract the library source files, to OSS_LIB_SOURCE directory.
+ - Edit OSS_LIB_SOURCE and OSS_LIB_DIR path on the /build.bat
+ - Ope Visual Studio command prompt
+ - run /script/build.bat 
 
-## OSS_LIB_DIR の構成
+## Directory structure of OSS_LIB_DIR
 /bin  
-  \*.dll を置く  
+  \*.dll 
 
 /include  
-ライブラリ名下に、それぞれの include ファイルを置く  
+ \*.h, \*.hpp, \*.inc, \*.def \*.cmake 
 
 /lib  
-lib ファイルを置く  
+ \*.lib
 
 /data
-  Projection パラメータ・ファイルを置く(Proj)  
+  Projection parameter files (Proj)  
 
-/ライブラリ名  
-  個々のライブラリでインストールされた構成を、ここに残す  
+/[the library name]  
+  the installed files of the library  
   
