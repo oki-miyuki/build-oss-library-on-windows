@@ -1,3 +1,4 @@
+@echo off
 rem ---------------
 rem BUILD Tiff
 rem ---------------
@@ -12,10 +13,15 @@ if "%TIFF_DIR%"=="" (
 )
 
 set ZLIB_LIBRARY=%OSS_LIB_DIR%\lib\zlib.lib
-set JPEG_LIBRARY=%OSS_LIB_DIR%\lib\jpeg.lib
+set JPEG_LIBRARY=%OSS_LIB_DIR%\lib\libjpeg.lib
 
-if not exist %ZLIB_LIBRARY% or not exist %JPEG_LIBRARY% (
-  echo "Tiff: zlib or jpeg is needed skip..."
+if not exist %ZLIB_LIBRARY% (
+  echo "Tiff: zlib is needed skip..."
+  goto end
+)
+
+if not exist %JPEG_LIBRARY% (
+  echo "Tiff: jpeg is needed skip..."
   goto end
 )
 
