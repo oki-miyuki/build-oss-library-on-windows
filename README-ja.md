@@ -1,6 +1,8 @@
 # build-oss-library-on-windows
 ## コンセプト
-C,C++系のオープンソース・ライブラリをウィンドウズ環境下のVisual Studio でコンパイルする手順をまとめる。
+C,C++系のオープンソース・ライブラリをウィンドウズ環境下のVisual Studio でコンパイルする手順をまとめる。 
+
+note: Visual Studio 2015以降を使用できる場合、[vcpkg](https://github.com/Microsoft/vcpkg/tree/master/ports)が利用できます。
 ## 共通環境
 環境変数を設定し、これに則ってライブラリを構築する  
 オープンソース・ライブラリを展開するディレクトリ  
