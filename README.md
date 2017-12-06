@@ -1,7 +1,10 @@
 # build-oss-library-on-windows
 ## Concept
 
-Summarize procedures for compiling C / C ++ based open source libraries with Visual Studio under Windows environment.
+Summarize procedures for compiling C / C ++ based open source libraries with Visual Studio under Windows environment. 
+
+note: Visual Stuido 2015 later: [vcpkg](https://github.com/Microsoft/vcpkg/tree/master/ports) is better solution.
+
 ## Common Environment
 Set the following environment variables and build a library accordingly 
 
