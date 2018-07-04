@@ -15,6 +15,7 @@ if "%TBB_DIR%"=="" (
 
 pushd %TBB_DIR%
 
+devenv /upgrade build\vs2013\makefile.sln
 msbuild /p:Configuration=Release;PlatformToolset=%VCTOOL% build\vs2013\makefile.sln
 
 
