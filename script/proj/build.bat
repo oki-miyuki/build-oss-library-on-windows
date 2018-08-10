@@ -13,6 +13,11 @@ if "%PROJ_DIR%"=="" (
 
 pushd %PROJ_DIR%
 
+echo ======================================================
+echo  BUILD Proj
+echo ======================================================
+
+
 nmake -f makefile.vc INSTDIR=%OSS_LIB_DIR%\proj
 nmake -f makefile.vc INSTDIR=%OSS_LIB_DIR%\proj install-all
 

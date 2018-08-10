@@ -13,6 +13,10 @@ if "%GEOS_DIR%"=="" (
 
 pushd %GEOS_DIR%
 
+echo ======================================================
+echo  BUILD Geos
+echo ======================================================
+
 rem 
 rem @see https://trac.osgeo.org/geos/ticket/753
 rem Closed ticket is not solve issue.
@@ -30,7 +34,7 @@ if "%DOWNLOAD_FAIL%"=="YES" (
 )
 rem <<<
 
-rem del /S /Q build
+del /S /Q build
 mkdir build
 cd build
 cmake .. -G"NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=%OSS_LIB_DIR%\geos

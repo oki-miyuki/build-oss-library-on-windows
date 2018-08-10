@@ -15,7 +15,11 @@ if "%OPENCV_DIR%"=="" (
 
 pushd %OPENCV_DIR%
 
-rem del /S /Q build
+echo ======================================================
+echo  BUILD OpenCV
+echo ======================================================
+
+del /S /Q build
 mkdir build
 cd build
 cmake .. -G"NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=%OSS_LIB_DIR%\opencv

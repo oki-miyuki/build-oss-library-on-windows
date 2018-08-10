@@ -13,7 +13,11 @@ if "%FREETYPE_DIR%"=="" (
 
 pushd %FREETYPE_DIR%
 
-rem del /S /Q build
+echo ======================================================
+echo  BUILD Freetype
+echo ======================================================
+
+del /S /Q build
 mkdir build
 cd build
 cmake .. -G"NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=%OSS_LIB_DIR%\freetype

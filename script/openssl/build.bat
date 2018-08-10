@@ -16,6 +16,10 @@ if "%OPENSSL_DIR%"=="" (
 
 pushd %OPENSSL_DIR%
 
+echo ======================================================
+echo  BUILD OpenSSL
+echo ======================================================
+
 if "%MACHINE_TARGET%"=="x86" (
  perl Configure VC-WIN32 --prefix=%OSS_LIB_DIR%\openssl --openssldir=%OSS_LIB_DIR%\openssl\ssl
 ) else if "%MACHINE_TARGET%"=="x64" (
@@ -25,6 +29,7 @@ if "%MACHINE_TARGET%"=="x86" (
  pause
 )
 
+nmake clean
 nmake
 nmake test
 nmake install

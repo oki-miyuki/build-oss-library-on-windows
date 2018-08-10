@@ -11,9 +11,20 @@ if "%JPEG_DIR%"=="" (
   goto end
 )
 
+copy ..\win32.mak %JPEG_DIR%
+
 pushd %JPEG_DIR%
 
-if not exist jconfig.h  nmake -f makefile.vc setup-v10
+echo ======================================================
+echo  BUILD JPEG
+echo ======================================================
+
+
+rem --------------------------------------------
+rem the name setup-v15 offen changed. 
+rem   check makefile.vc (grep setup)
+rem --------------------------------------------
+if not exist jconfig.h  nmake -f makefile.vc setup-v15
 nmake -f makefile.vc nodebug=1
 
 xcopy /s /e /y *.h %OSS_LIB_DIR%\jpeg\include\

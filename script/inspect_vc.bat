@@ -46,7 +46,10 @@ FINDSTR /R /C:"Version 13." clres.txt >NUL 2>&1 && (
 
 
 echo Machine Target:
-FINDSTR /R /C:"80x86" clres.txt >NUL 2>&1 && (
+FINDSTR /R /C:"x86" clres.txt >NUL 2>&1 && (
+  echo 80x86
+  set MACHINE_TARGET=x86
+) || FINDSTR /R /C:"80x86" clres.txt >NUL 2>&1 && (
   echo 80x86
   set MACHINE_TARGET=x86
 ) || FINDSTR /R /C:"x64" clres.txt >NUL 2>&1 && (

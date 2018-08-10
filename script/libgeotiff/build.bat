@@ -33,7 +33,11 @@ if not exist %TIFF_LIBRARY% (
 
 pushd %LIBGEOTIFF_DIR%
 
-rem del /S /Q build
+echo ======================================================
+echo  BUILD LibGeoTiff
+echo ======================================================
+
+del /S /Q build
 mkdir build
 cd build
 

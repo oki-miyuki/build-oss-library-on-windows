@@ -24,8 +24,11 @@ if not exist %ZLIB_LIBRARY% (
 
 pushd %LIBPNG_DIR%
 
+echo ======================================================
+echo  BUILD LibPNG
+echo ======================================================
 
-rem del /S /Q build
+del /S /Q build
 mkdir build
 cd build
 cmake .. -G"NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=%OSS_LIB_DIR%\libpng -DZLIB_INCLUDE_DIR=%OSS_LIB_DIR%\include -DZLIB_LIBRARY=%ZLIB_LIBRARY:\=/%

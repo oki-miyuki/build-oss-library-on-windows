@@ -28,8 +28,13 @@ if not exist %JPEG_LIBRARY% (
 
 pushd %TIFF_DIR%
 
+echo ======================================================
+echo  BUILD Tiff
+echo ======================================================
+
 rem nmake -f makefile.vc
-rem del /S /Q buildtiff
+
+del /S /Q buildtiff
 
 mkdir buildtiff
 cd buildtiff
